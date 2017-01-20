@@ -1,0 +1,5 @@
+%include include.mvm
+hello,world
+%include macro.mvm
+%define fuck
+china is good

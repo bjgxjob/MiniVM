@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\minivm.cpp" />
+    <ClCompile Include="..\src\mvm_file.cpp" />
+    <ClCompile Include="..\src\mvm_preprocessor.cpp" />
+    <ClCompile Include="..\src\mvm_memory.cpp" />
+    <ClCompile Include="..\src\mvm_register.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\include\mvm.h" />
+    <ClInclude Include="..\src\include\mvm_file.h" />
+    <ClInclude Include="..\src\include\mvm_preprocessor.h" />
+    <ClInclude Include="..\src\include\mvm_token.h" />
+    <ClInclude Include="..\src\include\mvm_func.h" />
+    <ClInclude Include="..\src\include\mvm_memory.h" />
+    <ClInclude Include="..\src\include\mvm_register.h" />
+  </ItemGroup>
+</Project>
