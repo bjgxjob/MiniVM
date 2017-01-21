@@ -19,9 +19,8 @@ namespace mvm
 	class mvm_memory
 	{
 	public:
-		mvm_memory();
+		mvm_memory(size_t);
 		~mvm_memory();
-		void alloc(size_t);
 		mvm_mem_block & at(size_t);
 	private:
 		std::vector<mvm_mem_block> mem;
