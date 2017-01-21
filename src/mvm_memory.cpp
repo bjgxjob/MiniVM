@@ -1,30 +1,15 @@
 #include "include\mvm_memory.h"
 
-mvm::mvm_memory::mvm_memory()
+mvm::mvm_memory::mvm_memory(){}
+
+mvm::mvm_memory::~mvm_memory() { mem.~vector(); }
+
+void mvm::mvm_memory::alloc(size_t size)
 {
-	mem = nullptr;
+	mem.resize(size);
 }
 
-mvm::mvm_memory::~mvm_memory()
+mvm::mvm_mem_block & mvm::mvm_memory::at(size_t pos)
 {
-	free();
-}
-
-bool mvm::mvm_memory::alloc(size_t size)
-{
-	if (mem) free();
-	mem = (uint32_t *)calloc(size,sizeof uint32_t);
-	return mem ? m_size = size, true : m_size = 0, false;
-}
-
-void mvm::mvm_memory::free()
-{
-	if (mem) ::free(mem),m_size = 0;
-}
-
-uint32_t mvm::mvm_memory::at(size_t pos)
-{
-	if (pos >= m_size)
-		return 0;
-	return mem[pos];
+	return mem.at(pos);
 }
