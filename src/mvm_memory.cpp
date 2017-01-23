@@ -1,6 +1,6 @@
 #include "include\mvm_memory.h"
 
-mvm::mvm_memory::mvm_memory(size_t count) { mem.reserve(count); }
+mvm::mvm_memory::mvm_memory(size_t count) { mem.resize(count); }
 
 mvm::mvm_memory::~mvm_memory() { mem.~vector(); }
 
