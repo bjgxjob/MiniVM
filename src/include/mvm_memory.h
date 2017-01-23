@@ -7,14 +7,9 @@
 
 namespace mvm
 {
-	union mvm_mem_block
+	struct mvm_mem_block
 	{
-		int32_t i32;
-		struct 
-		{
-			int16_t l16;
-			int16_t h16;
-		} i16;
+		int8_t i8 = 0;
 	};
 	class mvm_memory
 	{

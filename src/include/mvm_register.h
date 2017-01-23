@@ -3,27 +3,39 @@
 
 #include <stdlib.h>
 #include <stdint.h>
-#include <vector>
+#include <map>
 
 #include "mvm_memory.h"
 
 namespace mvm
 {
+	enum class mvm_register_type : unsigned short
+	{
+
+	};
 	struct mvm_register_block
 	{
-		mvm_mem_block data;
-		bool is_eax;
-		bool is_ebx;
-		bool is_ecx;
-		bool is_edx;
-		bool is_esp;
-		bool is_ebp;
-		bool is_esi;
-		bool is_edi;
-		bool is_eflags;
-		bool is_tsc;
-		bool is_eip;
-		bool is_seg;
+		union mvm_mem_block
+		{
+			union sign_value
+			{
+				int32_t i32;
+				uint32_t ui32;
+			};
+			struct
+			{
+				int16_t l16;
+				int16_t h16;
+			} i16;
+			struct
+			{
+				int8_t ll8;
+				int8_t l8;
+				int8_t h8;
+				int8_t hh8;
+			};
+		} value = { 0 };
+		mvm_register_type type;
 	};
 
 }
