@@ -11,7 +11,7 @@ namespace mvm
 {
 	enum class mvm_register_type : unsigned short
 	{
-
+		unknown
 	};
 	struct mvm_register_block
 	{
@@ -35,7 +35,7 @@ namespace mvm
 				int8_t hh8;
 			};
 		} value = { 0 };
-		mvm_register_type type;
+		mvm_register_type type = mvm_register_type::unknown;
 	};
 
 }
